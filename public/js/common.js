@@ -1,4 +1,4 @@
-define(['jquery'],function () {
+define(['jquery','template','cookie'],function ($,template) {
     // NProgress.start();
     // NProgress.done();
     //左侧导航菜单折叠展开
@@ -20,7 +20,20 @@ define(['jquery'],function () {
         });
         return false;
     });
-});
 
+// 验证是否登录
+var seesionId = $.cookie('PHPSESSID');
+if(!seesionId && location.pathname != '/main/login'){
+    location.href = '/main/login';
+}
+// 获取登录信息，填充页面
+var cookie = $.cookie('loginInfo');
+var loginInfo = cookie ? JSON.parse(cookie):{};
+// $('.profile img').attr('src',loginInfo.tc_avatar);
+// $('.profile h4').html(loginInfo.tc_name);
+var tpl = '<div class="avatar img-circle"><img src="{{tc_avatar}}"></div><h4>{{tc_name}}</h4>';
+    var html = template.render(tpl,loginInfo);
+    $('#profileId').html(html);
+});
 
 

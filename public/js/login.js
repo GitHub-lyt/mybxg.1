@@ -1,5 +1,5 @@
 //登录功能
-define(['jquery'], function ($) {
+define(['jquery','cookie'], function ($) {
     $('#loginBtn').click(function () {
         $.ajax({
             type : 'post',
@@ -9,6 +9,7 @@ define(['jquery'], function ($) {
             success : function (data) {
                 //成功登陆
                 if (data.code == 200) {
+                    $.cookie('loginInfo',JSON.stringify(data.result),{path : '/'});
                     location.href = '/main/index';
                 } else {
                     alert('用户名和密码错误');
