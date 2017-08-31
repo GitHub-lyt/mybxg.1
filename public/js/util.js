@@ -16,7 +16,7 @@ define(['jquery'],function ($) {
                     if(key == kv[0]){
                         //找到对应参数
                         result = kv[1];
-                        return false;// 终止循环
+                        return false; // 终止循环
                     }
                 });
                 return result;
