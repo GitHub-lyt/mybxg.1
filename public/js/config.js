@@ -14,7 +14,8 @@ require.config({
         index: '../js/index',
         util: '../js/util',
         teacherlist: '../js/teacher-list',
-        teacheradd: '../js/teacher-add'
+        teacheradd: '../js/teacher-add',
+        settings : '../js/settings'
     },
     shim: {//把非标准版快转换为标准版快
         bootstrap : {
