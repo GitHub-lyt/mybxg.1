@@ -1,4 +1,4 @@
-define(['jquery','template','util',],function ($,template,util) {
+define(['jquery','template','util','datepicker','language'],function ($,template,util) {
 //设置导航菜单选中
     util.setMenu('/teacher/list');
     //获取编辑讲师的ID
@@ -20,7 +20,7 @@ define(['jquery','template','util',],function ($,template,util) {
                 //绑定编辑讲师的提交事件
                 submitForm('/api/teacher/update');
             }
-        })
+        });
     }else{
         //添加讲师
         var html = template('teacherTpl',{operate : '讲师添加',tc_gender : 0});
