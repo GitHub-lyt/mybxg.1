@@ -7,6 +7,7 @@ require.config({
         bootstrap: 'bootstrap/js/bootstrap.min',
         datepicker : 'bootstrap-datepicker/js/bootstrap-datepicker.min',
         language : 'bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min',
+        validate : 'validate/jquery-validate.min',
         common: '../js/common',
         login: '../js/login',
         index: '../js/index',
@@ -16,10 +17,13 @@ require.config({
     },
     shim: {//把非标准版快转换为标准版快
         bootstrap : {
-        deps : ['jquery']
+            deps : ['jquery']
        },
         language : {
             deps : ['jquery','datepicker']
+        },
+        validate : {
+            deps : ['jquery']
         }
     }
 });
